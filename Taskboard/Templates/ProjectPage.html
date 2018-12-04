@@ -1,0 +1,29 @@
+﻿<h1>{{ProjectDetails.ProjectName}}</h1>
+
+
+
+<!--<div style="width:80%; margin: 0 auto 0 auto;"> -->
+
+    <div class="row"> 
+
+        <div class="colStyle" id="{{ProjectDetails.EmployeesWorkingOnProjectWithCorrespondingTasks.EmployeeId}}"
+             ng-repeat="employeeDetails in ProjectDetails.EmployeesWorkingOnProjectWithCorrespondingTasks">
+
+            <div style="margin-bottom: 10px;">
+                <h3>{{employeeDetails.EmployeeName}}</h3>
+            </div>
+
+            <div ng-repeat="task in employeeDetails.EmployeeTasks" style="margin-bottom: 10px;">
+
+                <div class="caption">
+                    <h5><strong>{{task.TaskTitle}}</strong></h5>
+                    <p>{{task.TaskDescription}}</p>
+                    <p><!--<a href="#" class="btn btn-primary btn-sm" role="button">Edit</a>--></p>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+<!--</div>-->

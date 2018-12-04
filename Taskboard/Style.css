@@ -1,0 +1,42 @@
+﻿
+.titleSection {
+    color: #ffffff;
+    background-color: #9A4EAE;
+    padding: 1%;        
+}
+
+table {
+border-spacing: 90px;
+padding-top: 5% 10% 0 30%;
+width: 100%;
+}
+
+table td {
+    border: 1px solid black;
+    overflow: hidden;
+}
+
+table td a {
+    width: 100%;
+    background-color: #ffffff;
+    color: #000000;
+    padding: 5%;
+    text-decoration: none;
+    display: block;
+            
+}
+
+.colStyle{
+    
+    padding: 3%;
+    width:50%;
+    display: inline-block;
+}
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+
