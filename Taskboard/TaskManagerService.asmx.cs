@@ -124,6 +124,10 @@ namespace Taskboard
                     employeeTaskDetails.EmployeeTasks = new List<Task>();
                     projectDetails.EmployeesWorkingOnProjectWithCorrespondingTasks.Add(employeeTaskDetails);
                 }
+
+                // Adding a new EmployeeTaskDetail object at the end of the list so we can use
+                // ng-repeat and add an extra column at the end for adding new employee.
+                projectDetails.EmployeesWorkingOnProjectWithCorrespondingTasks.Add(new EmployeeTaskDetails());
             }
 
             foreach (EmployeeTaskDetails employeeDetails in projectDetails.EmployeesWorkingOnProjectWithCorrespondingTasks)
@@ -152,6 +156,10 @@ namespace Taskboard
                         task.ProjectId = Convert.ToInt32(rdr["ProjectId"]);
                         listOfTasks.Add(task);
                     }
+
+                    // Adding a new Task object at the end of the list so we can use
+                    // ng-repeat and add an extra row at the end for adding new Task.
+                    listOfTasks.Add(new Task());
 
                     employeeDetails.EmployeeTasks = listOfTasks;
                 }

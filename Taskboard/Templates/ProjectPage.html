@@ -1,24 +1,32 @@
-﻿<h1>{{ProjectDetails.ProjectName}}</h1>
-
+﻿
+<div class="titleSection">
+    <h1>{{ProjectDetails.ProjectName}}</h1>
+</div>
 
 
 <!--<div style="width:80%; margin: 0 auto 0 auto;"> -->
 
     <div class="row"> 
 
-        <div class="colStyle" id="{{ProjectDetails.EmployeesWorkingOnProjectWithCorrespondingTasks.EmployeeId}}"
+        <div class="colStyle"  
+             id="{{ProjectDetails.EmployeesWorkingOnProjectWithCorrespondingTasks.EmployeeId}}"
              ng-repeat="employeeDetails in ProjectDetails.EmployeesWorkingOnProjectWithCorrespondingTasks">
 
-            <div style="margin-bottom: 10px;">
+            <div ng-if="$last" class="employeeName">
+                <h3><a href="#!/">Add New Member</a></h3>
+            </div>
+            <div ng-if="!$last" class="employeeName">
                 <h3>{{employeeDetails.EmployeeName}}</h3>
             </div>
 
-            <div ng-repeat="task in employeeDetails.EmployeeTasks" style="margin-bottom: 10px;">
+            <div ng-repeat="task in employeeDetails.EmployeeTasks">
 
-                <div class="caption">
+                <div ng-if="$last" class="caption">
+                    <h5><a href="#!/">Add New Task</a></h5>
+                </div>
+                <div ng-if="!$last" class="caption">
                     <h5><strong>{{task.TaskTitle}}</strong></h5>
                     <p>{{task.TaskDescription}}</p>
-                    <p><!--<a href="#" class="btn btn-primary btn-sm" role="button">Edit</a>--></p>
                 </div>
 
             </div>

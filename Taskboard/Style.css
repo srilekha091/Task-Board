@@ -26,10 +26,15 @@ table td a {
             
 }
 
+/** {
+    box-sizing: border-box;
+}*/
+
+
 .colStyle{
-    
+    box-sizing: border-box;
     padding: 3%;
-    width:50%;
+    width:25%;
     display: inline-block;
 }
 
@@ -39,4 +44,38 @@ table td a {
     clear: both;
 }
 
+.employeeName {
+    background-color: #ffffff;
+    color: #9A4EAE;
+    border: 1px solid #808080;
+    padding: 2px;
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.caption {
+    background-color: #ffffff;
+    color: black;
+    border: 1px solid #808080;
+    padding: 2px;
+    margin-bottom: 25px;
+}
+
+@media screen and (max-width: 600px) {
+    table {
+        display: block;
+    }
+
+    tr {
+        position: absolute;
+    }
+
+    td {
+        /* Behave  like a "row" */
+        border: none;
+        border-bottom: 1px solid #eee;
+        position: relative;
+        padding-left: 50%;
+    }
+}
 
