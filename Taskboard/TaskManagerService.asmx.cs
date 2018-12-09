@@ -165,6 +165,10 @@ namespace Taskboard
                 }
             }
 
+            // Deleting add new task for last employee
+            var countOfEmployees = projectDetails.EmployeesWorkingOnProjectWithCorrespondingTasks.Count();
+            projectDetails.EmployeesWorkingOnProjectWithCorrespondingTasks[countOfEmployees - 1].EmployeeTasks = new List<Task>();
+
             Context.Response.Write(js.Serialize(projectDetails));
         }
 

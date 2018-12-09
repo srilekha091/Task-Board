@@ -36,13 +36,14 @@ table td a {
     padding: 3%;
     width:25%;
     display: inline-block;
+    float: left;
 }
 
 .row:after {
     content: "";
     display: table;
     clear: both;
-}
+} 
 
 .employeeName {
     background-color: #ffffff;
@@ -54,11 +55,36 @@ table td a {
 }
 
 .caption {
-    background-color: #ffffff;
-    color: black;
-    border: 1px solid #808080;
+    background-color: #f0f0f0;
+    border: 1px solid #bfbfbf;
     padding: 2px;
     margin-bottom: 25px;
+}
+
+.caption a {
+    color: #b3b3b3;
+    font-weight: 400;
+    text-align: center;
+    text-decoration: none;
+}
+
+.projectCaption {
+    background-color: #ffffff;
+    color: black;
+    border: 1px #cccccc;
+    padding: 2px;
+    margin-bottom: 25px;
+}
+/*.vLine {
+    border-left: 1px dashed #808080;
+    height: auto;
+    padding: 0;
+    marging: 0;
+}*/
+.vl {
+    border-left: 1px dashed #808080;
+    height: 500px;
+    float: left;
 }
 
 @media screen and (max-width: 600px) {
@@ -76,6 +102,10 @@ table td a {
         border-bottom: 1px solid #eee;
         position: relative;
         padding-left: 50%;
+    }
+
+    .colStyle{
+        width: 100%;
     }
 }
 

@@ -6,12 +6,12 @@
 
 <!--<div style="width:80%; margin: 0 auto 0 auto;"> -->
 
-    <div class="row"> 
-
+    <!--<div class="row">--> 
+        <!--<vl class="vLine"></vl>-->
         <div class="colStyle"  
              id="{{ProjectDetails.EmployeesWorkingOnProjectWithCorrespondingTasks.EmployeeId}}"
              ng-repeat="employeeDetails in ProjectDetails.EmployeesWorkingOnProjectWithCorrespondingTasks">
-
+            <div class="vl" style="padding-right: 15px;"></div>
             <div ng-if="$last" class="employeeName">
                 <h3><a href="#!/">Add New Member</a></h3>
             </div>
@@ -22,9 +22,10 @@
             <div ng-repeat="task in employeeDetails.EmployeeTasks">
 
                 <div ng-if="$last" class="caption">
-                    <h5><a href="#!/">Add New Task</a></h5>
+                    <i class="fal fa-plus-circle"  style="font-size:24px; font-weight: 200;"></i>
+                    <p><a href="#!/">Create New Task</a></p>
                 </div>
-                <div ng-if="!$last" class="caption">
+                <div ng-if="!$last" class="projectCaption">
                     <h5><strong>{{task.TaskTitle}}</strong></h5>
                     <p>{{task.TaskDescription}}</p>
                 </div>
@@ -32,6 +33,6 @@
             </div>
         </div>
 
-    </div>
+    <!--</div>-->
 
 <!--</div>-->
