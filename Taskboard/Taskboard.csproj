@@ -76,7 +76,11 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Index.html" />
+    <Content Include="Scripts\angular-dragdrop.min.js" />
     <Content Include="Scripts\angular-ui-router.min.js" />
+    <Content Include="Scripts\ui-bootstrap.js" />
+    <Content Include="Templates\CreateProject.html" />
+    <Content Include="Templates\CreateTask.html" />
     <Content Include="Templates\ProjectPage.html" />
     <Content Include="Scripts\angular-route.js" />
     <Content Include="Scripts\angular-route.min.js" />

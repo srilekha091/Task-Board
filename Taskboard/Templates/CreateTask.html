@@ -1,0 +1,28 @@
+﻿<form id="formId">
+    <div class="modal-header">
+        <h3>Create Task</h3>
+    </div>
+    <div class="modal-body">
+        <label>Title</label>
+        <p><input ng-model="item.value" type="text" placeholder="Project Title..." /></p>
+        <label>Description</label>
+        <p><input ng-model="item.value" type="text" placeholder="Project Description..." /></p>
+        <label>Status</label>
+        <p>
+            <select id="employeeForm">
+                <option hidden>Select</option>
+                <option>Done</option>
+                <option>On Hold</option>
+                <option>In Process</option>
+                <option>Send</option>
+                <option>Schedule</option>
+            </select>
+        </p>
+        <!--<p><input ng-model="item.value" placeholder="Project Title" /></p>-->
+    </div>
+    <p></p>
+    <div class="modal-footer">
+        <button ng-click="close()" class="btn">Cancel</button>
+        <button ng-click="save()" class="btn btn-primary">Create</button>
+    </div>
+</form>

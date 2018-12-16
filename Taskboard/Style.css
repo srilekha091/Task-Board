@@ -6,21 +6,21 @@
 }
 
 table {
-border-spacing: 90px;
-padding-top: 5% 10% 0 30%;
-width: 100%;
+    border-spacing: 50px 10px !important;
+    padding: 5% 12% 5% 12% !important;
+    width: 100% !important;
 }
 
-table td {
-    border: 1px solid black;
-    overflow: hidden;
-}
+    table td {        
+        border: 1px solid #bfbfbf;
+        overflow: hidden;
+    }
 
 table td a {
     width: 100%;
     background-color: #ffffff;
     color: #000000;
-    padding: 5%;
+    padding: 7%;
     text-decoration: none;
     display: block;
             
@@ -43,12 +43,12 @@ table td a {
     content: "";
     display: table;
     clear: both;
-} 
+}
 
 .employeeName {
     background-color: #ffffff;
     color: #9A4EAE;
-    border: 1px solid #808080;
+    border: 1px solid #bfbfbf;
     padding: 2px;
     text-align: center;
     margin-bottom: 25px;
@@ -57,9 +57,13 @@ table td a {
 .caption {
     background-color: #f0f0f0;
     border: 1px solid #bfbfbf;
-    padding: 2px;
-    margin-bottom: 25px;
+    border-radius: 5px;
 }
+
+.caption h4, i {
+        margin-top: 15px;
+        text-align: center;
+    }
 
 .caption a {
     color: #b3b3b3;
@@ -71,10 +75,32 @@ table td a {
 .projectCaption {
     background-color: #ffffff;
     color: black;
-    border: 1px #cccccc;
-    padding: 2px;
-    margin-bottom: 25px;
+    border: 1px solid #bfbfbf;
+    /*border-left-color: coral;
+    border-style: solid;*/
+    margin-bottom: 20px;
+    border-radius: 5px;
+    padding-left: 3%
 }
+
+option:not(:checked){
+    background-color: #ffffff;
+}
+
+option hover {
+    background-color: #9A4EAE;
+    color: #ffffff;
+}
+
+/*.dropItem hover {
+    background-image: none;
+    background-color: none !important;
+}
+
+.dropItem {
+    background-color: #ffffff;
+}*/
+
 /*.vLine {
     border-left: 1px dashed #808080;
     height: auto;
@@ -109,3 +135,53 @@ table td a {
     }
 }
 
+/* Dropdown styles start */
+.dropbtn {
+    background-color: #ffffff;
+    color: #000000;
+    padding: 5px;
+    font-size: 10px;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    border: #bfbfbf;
+}
+
+    .dropbtn:hover, .dropbtn:focus {
+        background-color: #ffffff;
+    }
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #ffffff;
+    min-width: 90px;
+    overflow: auto;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    border-radius: 4px;
+}
+
+    .dropdown-content a {
+        font-size: 12px;
+        color: black;
+        padding: 5px;
+        text-decoration: none;
+        display: block;
+    }
+
+.dropdown a:hover {
+    background-color: #9A4EAE;
+    color: #ffffff;
+}
+
+.show {
+    display: block;
+}
+
+/* Dropdown styles end */

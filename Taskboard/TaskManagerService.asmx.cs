@@ -79,6 +79,9 @@ namespace Taskboard
                 }
             }
 
+            // Adding an empty project to add "Create New Project" in UI
+            listOfProjects.Add(new Project());
+
             Context.Response.Write(js.Serialize(listOfProjects));
         }
 

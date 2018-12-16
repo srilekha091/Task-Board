@@ -8,12 +8,12 @@
 
     <!--<div class="row">--> 
         <!--<vl class="vLine"></vl>-->
-        <div class="colStyle"  
+        <div class="colStyle"  data-drop="true" data-jqyoui-options jqyoui-droppable 
              id="{{ProjectDetails.EmployeesWorkingOnProjectWithCorrespondingTasks.EmployeeId}}"
              ng-repeat="employeeDetails in ProjectDetails.EmployeesWorkingOnProjectWithCorrespondingTasks">
-            <div class="vl" style="padding-right: 15px;"></div>
-            <div ng-if="$last" class="employeeName">
-                <h3><a href="#!/">Add New Member</a></h3>
+            <!--<div class="vl" style="padding-right: 15px;"></div>-->
+            <div ng-if="$last" class="caption">
+                <h4><a href="#!/">Add New Member</a></h4>
             </div>
             <div ng-if="!$last" class="employeeName">
                 <h3>{{employeeDetails.EmployeeName}}</h3>
@@ -22,13 +22,36 @@
             <div ng-repeat="task in employeeDetails.EmployeeTasks">
 
                 <div ng-if="$last" class="caption">
-                    <i class="fal fa-plus-circle"  style="font-size:24px; font-weight: 200;"></i>
-                    <p><a href="#!/">Create New Task</a></p>
+                    <center>
+                        <i class="fa fa-plus-circle" ></i>
+                        <p><a href="#!/" onclick="formId">Create New Task</a></p>
+                    </center>                    
                 </div>
-                <div ng-if="!$last" class="projectCaption">
-                    <h5><strong>{{task.TaskTitle}}</strong></h5>
-                    <p>{{task.TaskDescription}}</p>
-                </div>
+                <div ng-if="!$last" class="projectCaption" data-drag="true" data-jqyoui-options jqyoui-draggable="{animate:true}">
+                    <div style="display: inline-block;">
+                        <h5><strong>{{task.TaskTitle}}&nbsp;</strong></h5>
+                    </div>
+                    <!--<div style="display: inline-block; ">
+                        <select runat="server" id="select" style="border-radius: 4px 4px 4px 4px;">
+                            <option value="A" class="dropItem">Done</option>
+                            <option value="B" class="dropItem">On Hold</option>
+                            <option value="C" class="dropItem">In Process</option>
+                            <option value="D" class="dropItem">Sent</option>
+                            <option value="D" class="dropItem">Schedule</option>
+                        </select>
+                      </div>-->
+                    <div class="dropdown">
+                        <button onclick="myFunction()" class="dropbtn">Select&nbsp;<i class="fa fa-caret-down"></i></button>
+                        <div id="myDropdown" class="dropdown-content">
+                            <a href="" value="A" class="dropItem">Done</a>
+                            <a href="" value="B" class="dropItem">On Hold</a>
+                            <a href="" value="C" class="dropItem">In Process</a>
+                            <a href="" value="D" class="dropItem">Sent</a>
+                            <a href="" value="E" class="dropItem">Schedule</a>
+                        </div>
+                    </div>
+                        <p>{{task.TaskDescription}}</p>
+                    </div>
 
             </div>
         </div>
@@ -36,3 +59,22 @@
     <!--</div>-->
 
 <!--</div>-->
+<script>
+    function myFunction() {
+        document.getElementById("myDropdown").classList.toggle("show");
+    }
+    $('#select').change(function () {
+        if ($(this).val() == 'A') {
+            $("#select").css('background-color', 'white');
+        }
+        if ($(this).val() == 'B') {
+            $("#select").css('background-color', 'red');
+        }
+        if ($(this).val() == 'C') {
+            $("#select").css('background-color', 'yellow');
+        }
+        if ($(this).val() == 'D') {
+            $("#select").css('background-color', 'green');
+        }
+    });
+</script>
