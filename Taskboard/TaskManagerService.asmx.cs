@@ -361,5 +361,19 @@ namespace Taskboard
                 }
             }
         }
+
+        [WebMethod]
+        public void UpdateTasksTable(int employeeId, int taskId)
+        {
+            string cs = ConfigurationManager.ConnectionStrings["DBCS"].ConnectionString;
+            using (SqlConnection con = new SqlConnection(cs))
+            {
+                SqlCommand updateTasksTableCmd = new SqlCommand("Update Tasks set EmployeeId = "+
+                                                    employeeId + "where Id = " + taskId, con);
+                con.Open();
+
+                updateTasksTableCmd.ExecuteNonQuery();
+            }
+        }
     }
 }

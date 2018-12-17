@@ -37,6 +37,7 @@ table td a {
     width:25%;
     display: inline-block;
     float: left;
+    border-right: 1px dashed black;
 }
 
 .row:after {

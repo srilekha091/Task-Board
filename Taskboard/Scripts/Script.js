@@ -2,7 +2,7 @@
 /// <reference path="angular-route.js" />
 /// <reference path="ui-bootstrap.js" />
 
-var app = angular.module("TaskBoardApp", ["ngRoute", 'ui.bootstrap'])
+var app = angular.module("TaskBoardApp", ["ngRoute", 'ui.bootstrap', 'ngDragDrop'])
     .config(function ($routeProvider) {
         $routeProvider
             .when("/", {
@@ -32,6 +32,39 @@ var app = angular.module("TaskBoardApp", ["ngRoute", 'ui.bootstrap'])
             .then(function (response) {
                 $scope.ProjectDetails = response.data;
         })
+
+    })
+    .controller("dragDropController", function ($scope, $http, $routeParams, $route) {
+
+
+        $scope.startCallback = function (event, ui) {
+            console.log('You started draggin');
+        };
+
+        $scope.stopCallback = function (event, ui) {
+            console.log('Why did you stop draggin me?');
+        };
+
+        $scope.dragCallback = function (event, ui, taskId) {
+            console.log('hey, look I`m flying');
+            console.log(taskId);
+            $scope.TaskBeingDragged = parseInt(taskId.taskId);
+        };
+
+        $scope.dropCallback = function (event, ui, employeeId) {
+            console.log('hey, you dumped me :-(');
+            $scope.DraggedToEmployee = parseInt(employeeId.employeeId);
+            
+            $http({
+                url: "TaskManagerService.asmx/UpdateTasksTable",
+                data: { employeeId: $scope.DraggedToEmployee, taskId: $scope.TaskBeingDragged },
+                method: "post"
+            })
+            .then(function (response) {
+                console.log("Successfully updated the Task table");
+                $route.reload();
+            })
+        };
 
     })
     /*writing controller for pop up modal form*/

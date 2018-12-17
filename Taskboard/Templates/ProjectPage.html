@@ -6,9 +6,9 @@
 
 <!--<div style="width:80%; margin: 0 auto 0 auto;"> -->
 
-    <!--<div class="row">--> 
+    <div ng-controller="dragDropController"> 
         <!--<vl class="vLine"></vl>-->
-        <div class="colStyle"  data-drop="true" data-jqyoui-options jqyoui-droppable 
+        <div class="colStyle"  data-drop="true" data-jqyoui-options jqyoui-droppable="{multiple:true, onDrop:'dropCallback({employeeId: employeeDetails.EmployeeId})'}"
              id="{{ProjectDetails.EmployeesWorkingOnProjectWithCorrespondingTasks.EmployeeId}}"
              ng-repeat="employeeDetails in ProjectDetails.EmployeesWorkingOnProjectWithCorrespondingTasks">
             <!--<div class="vl" style="padding-right: 15px;"></div>-->
@@ -27,7 +27,7 @@
                         <p><a href="#!/" onclick="formId">Create New Task</a></p>
                     </center>                    
                 </div>
-                <div ng-if="!$last" class="projectCaption" data-drag="true" data-jqyoui-options jqyoui-draggable="{animate:true}">
+                <div id="{{task.Id}}" ng-if="!$last" class="projectCaption" data-drag="true" data-jqyoui-options="{revert: 'invalid'}" jqyoui-draggable="{animate:true, onDrag:'dragCallback({taskId: task.Id})'}">
                     <div style="display: inline-block;">
                         <h5><strong>{{task.TaskTitle}}&nbsp;</strong></h5>
                     </div>
@@ -56,10 +56,10 @@
             </div>
         </div>
 
-    <!--</div>-->
+    </div>
 
 <!--</div>-->
-<script>
+<!--<script>
     function myFunction() {
         document.getElementById("myDropdown").classList.toggle("show");
     }
@@ -77,4 +77,4 @@
             $("#select").css('background-color', 'green');
         }
     });
-</script>
+</script>-->
