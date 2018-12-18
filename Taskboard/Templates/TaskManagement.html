@@ -2,25 +2,6 @@
     <h1>Task Management</h1>
 </div>
 
-<!--<div>
-    <table>
-        <tr  ng-repeat="project in projects" ng-switch on="$index % 3">
-            <td ng-switch-when="0" ng-show="projects[$index]">
-                <a ng-if="$last" href="#!/">Create New Project</a>
-                <a ng-if="!$last" href="#!/ProjectPage/{{projects[$index].ProjectId}}">{{projects[$index].ProjectName}} <br /> {{projects[$index].ProjectDescription}} <br /> Total Members: {{projects[$index].EmployeesWorkingOnProject.length}}</a>
-            </td>
-            <td ng-switch-when="0" ng-show="projects[$index+1]">
-                    <a ng-if="$last" href="#!/">Create New Project</a>
-                    <a ng-if="!$last" href="#!/ProjectPage/{{projects[$index+1].ProjectId}}">{{projects[$index+1].ProjectName}} <br /> {{projects[$index+1].ProjectDescription}} <br /> Total Members: {{projects[$index+1].EmployeesWorkingOnProject.length}}</a>
-            </td>
-            <td ng-switch-when="0" ng-show="projects[$index+2]">
-                    <a ng-if="$last" href="#!/">Create New Project</a>
-                    <a ng-if="!$last" href="#!/ProjectPage/{{projects[$index+2].ProjectId}}">{{projects[$index+2].ProjectName}} <br /> {{projects[$index+2].ProjectDescription}} <br /> Total Members: {{projects[$index+2].EmployeesWorkingOnProject.length}}</a>
-            </td>
-        </tr>
-    </table>
-</div>-->
-
 <div>
     <table cellspacing="40">
         <tr ng-repeat="project in projects" ng-switch on="$index % 3">

@@ -31,13 +31,14 @@ table td a {
 }*/
 
 
-.colStyle{
+.colStyle {
     box-sizing: border-box;
     padding: 3%;
-    width:25%;
+    width: 25%;
     display: inline-block;
     float: left;
     border-right: 1px dashed black;
+    height: 100vh;
 }
 
 .row:after {
